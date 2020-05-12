@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="app.component.css">
+<style>
+    #official-info {
+        background:white;
+        width: auto;
+        height: auto;
+        float: left;
+        /*overflow-y: auto;
+         overflow-x: hidden;*/
+    }
+    </style>
+</head>
+
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>-->
+
+
+<h1>
+<p style = "font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 39pt; color:whitesmoke; font-weight: 700;" align="center"> TweetSeeker</p></h1>
+<!--<p style = "font-family:arial; color:black;" align="center">En el campo a continuación, ingresa el hashtag a buscar</p>-->
+
+
+<body>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <fieldset class="fielset"  style="border-color:white">
+    <legend>Ingresa el hashtag a buscar! </legend>
+      <div class="input-group mb-3" >
+        <div class="input-group-prepend">
+           <form class="formGroup" [formGroup]="tweetsform" (ngSubmit)="searchcall()">
+             <div class="input-field col s12">
+                <span class="input-group-text" style="color: rgb(0, 0, 0);"><b>#</b></span>
+
+                 <input id="hashtags" type="text" size="30" placeholder="#" vertical-align="center" class="form-control" name="formData" formControlName="formData" autofocus >
+                 <label for="hashtags"></label>
+              </div>
+                <br>
+                 <button class="btn1" type="submit" style="text-align:center" style="position: absolute; right: 15;">Search</button>
+            </form>
+            </div>
+        </div>
+  </fieldset><br><br><br><br>
+
+  <fieldset class="fielset" style="border-color:white">
+       <legend>Ingresa el nombre el archivo </legend>
+        <div class="col-xs-12">
+          <form class="formGroup" [formGroup]="tweetsform">
+
+            <div class="input-field col s12">
+              <input id="hashtags" type="text" size="30" style="color: black;" name="datos" formControlName="datos" placeholder="noticia x.txt" class="form-control2" autofocus >
+
+            </div>
+            <br>
+            <button class="btn1" type="submit" style="text-align:center"  (click)="getFile()" style="position: absolute; right: 15;">Search</button>
+
+          </form>
+         </div>
+   </fieldset>
+
+
+        <div class="col-xs-12"><br><br>
+            <div *ngFor="let item of text" class="col s12 m7">
+              <div class="card-content" >
+                <div class="caja2">
+                 <p>{{item._body}}</p>
+                </div>
+                <button class="btn1" type="submit" style="text-align:center"  (click)="NLUtext()" style="position: absolute; right: 0;">Analizar</button>
+              </div>
+             </div>
+        </div>
+
+      <br><br>
+      <div class="col-xs-12">
+        <div *ngFor="let item1 of respuesta" class="col s12 m7">
+          <div class="card-content" *ngFor="let item2 of item1"><br>
+            <div class="caja1">
+             <p> Tipo: {{item2.type}}</p>
+             <p> Texto: {{item2.text}}</p>
+           </div>
+          </div>
+      </div>
+
+<!--Trae tweet-->
+    <div *ngFor="let item of tweetsdata" class="col s12 m7">
+      <div *ngFor="let object of item" id="official-info">
+        <div class="card">
+        <div class="card-image">
+          <!--<img style={width:10px,height:10px;} src={{item.user.profile_image_url}}>-->
+        </div>
+        <div class="right-content"><br>
+          <!-- <span class="card-title">{{item.user.name}}</span> -->
+      <div class="caja">
+          <div class="card-content">
+             <p>{{object.tweet}}</p>
+          </div>
+          <div class="card-Anali">
+            <div *ngFor="let analysis of object.analysis">
+            <p> Tipo: {{analysis.type}}</p>
+            <p> Texto: {{analysis.text}}</p>
+           </div>
+      </div>
+      </div>
+</div>

@@ -1,0 +1,16 @@
+{
+  "cos_original_bucket": "os-educacion",
+  "cos_normalized_bucket": "os-educacion",
+  "cos_api_key": "kFjb5Wuka00Kbg9r0zDo3A7cFa3hW_zwAwJ2DcLwvVVe",
+  "cos_endpoint": "s3.us-east.cloud-object-storage.appdomain.cloud",
+  "iam_apikey_description": "Auto-generated for key d72ef958-c368-4b7a-a717-30cab99e1ef4",
+  "iam_apikey_name": "credencial-educacion",
+  "iam_role_crn": "crn:v1:bluemix:public:iam::::serviceRole:Manager",
+  "iam_serviceid_crn": "crn:v1:bluemix:public:iam-identity::a/7eff0c4d73394c0ca30ff22b4a905dd7::serviceid:ServiceId-621573a0-52d2-4dd1-9e20-421d2db5b755",
+  "cos_service_instance_id": "crn:v1:bluemix:public:cloud-object-storage:global:a/7c3c53c1245d449bb3791b9611571ce3:a51c5e3f-01a9-40d7-9a68-267e0cf48a0e::",
+  "access_key_id": "d72ef958c3684b7aa71730cab99e1ef4",
+   "secret_access_key": "9fd430fa6f05747dc40e1bc306a148524d8c7074c70d1b84"
+
+}
+
+    
